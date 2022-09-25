@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + React + TS</title>
+  <script type="module" crossorigin src="/grid-0.0.0.js"></script>
+  <link rel="stylesheet" href="/grid-0.0.0.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  
+  <script>
+    function downloadScript(config) {
+      if (!window.createRootApp) {
+        console.log("createRootApp is not defined");
+        setTimeout(function () {
+          downloadScript(config);
+        }.bind(this), 1000);
+        return;
+      }
+      window.createRootApp(config.container, config.options);
+    }
+
+    downloadScript({
+      container: document.getElementById('root'), 
+      options: {
+        name: 'Vite + React + TS',
+        url: 'https://vitejs.dev/guide/features.html',
+      }
+    });
+  </script>
+</body>
+
+</html>

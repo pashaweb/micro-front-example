@@ -1,0 +1,17 @@
+{
+  "name": "host",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:grid": "cd ../grid/ && yarn build && cd ../host/ && node copy-folders.js  && yarn run build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "fs-extra": "^10.1.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.1.0"
+  }
+}
