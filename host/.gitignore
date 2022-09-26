@@ -15,7 +15,8 @@ dist-ssr
 # Yarn Lock
 yarn.lock
 
-#
+#External runtime folders
+/public/external/*
 
 # Editor directories and files
 .vscode/*

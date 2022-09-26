@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "build:grid": "cd ../grid/ && yarn build && cd ../host/ && node copy-folders.js  && yarn run build",
+    "build:external": "cd ../grid/ && yarn build && cd ../host/ && node copy-folders.js ",
+    "build:all": "yarn build:external &&  yarn run build",
     "preview": "vite preview"
   },
   "devDependencies": {
