@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM, { RootOptions } from 'react-dom/client'
-import App from './App'
+import App, { AppProps } from './App'
 import './index.css'
 
 // ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -10,11 +10,15 @@ import './index.css'
 // )
 
 
-export function createRootApp(container: Element, options?: RootOptions): void {
-
-  ReactDOM.createRoot(container, options).render(
+export function createRootApp(container: Element, options: AppProps): void {
+  console.log(options);
+  //  const props: AppProps = 
+  // //   name: 'React',
+  // //   url: 'https://reactjs.org'
+  // // }
+  ReactDOM.createRoot(container).render(
     <React.StrictMode>
-      <App />
+      <App {...options} />
     </React.StrictMode>
   )
 }
@@ -22,4 +26,4 @@ export function createRootApp(container: Element, options?: RootOptions): void {
 window.createRootApp = createRootApp
 
 
-  
+
