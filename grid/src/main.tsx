@@ -3,19 +3,11 @@ import ReactDOM, { RootOptions } from 'react-dom/client'
 import App, { AppProps } from './App'
 import './index.css'
 
-// ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-// )
 
 
-export function createRootApp(container: Element, options: AppProps): void {
-  console.log(options);
-  //  const props: AppProps = 
-  // //   name: 'React',
-  // //   url: 'https://reactjs.org'
-  // // }
+export default function createRootApp(container: Element, options: AppProps): void {
+  console.log('createRootApp')
+
   ReactDOM.createRoot(container).render(
     <React.StrictMode>
       <App {...options} />
@@ -23,7 +15,7 @@ export function createRootApp(container: Element, options: AppProps): void {
   )
 }
 // @ts-ignore
-window.createRootApp = createRootApp
+window.createGridApp = createRootApp
 
 
 

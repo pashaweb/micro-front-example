@@ -4,9 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 3000",
+    "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "build:watch": "tsc && vite build --watch",
+    "preview": "vite preview",
+    "preview:3001": "vite preview --port 3001"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -39,10 +41,6 @@
     "transform": {
       "^.+\\.tsx$": "ts-jest",
       "^.+\\.ts$": "ts-jest"
-    },
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/mocks/file_mock.js",
-      "\\.(css|less)$": "<rootDir>/src/mocks/style_mock.js"
     }
   }
 }

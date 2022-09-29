@@ -29,6 +29,7 @@ describe('UsersGrid', () => {
           catchPhrase: "Proactive discrete paradigm",
           bs: "iterate next-generation technologies"
         }
+        
       }, 
       {
         id: 0,

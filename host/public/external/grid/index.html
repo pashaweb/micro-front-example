@@ -6,30 +6,30 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vite + React + TS</title>
-  <script type="module" crossorigin src="/grid-0.0.0.js"></script>
+  <script async type="module" crossorigin src="/grid-0.0.0.js"></script>
   <link rel="stylesheet" href="/grid-0.0.0.css">
 </head>
 
-<body>
+<body> 
   <div id="root"></div>
   
-  <script>
-    function downloadScript(config) {
+  <script async>
+    function initApp(config) {
       if (!window.createRootApp) {
         console.log("createRootApp is not defined");
         setTimeout(function () {
-          downloadScript(config);
+          initApp(config);
         }.bind(this), 1000);
         return;
       }
       window.createRootApp(config.container, config.options);
     }
 
-    downloadScript({
+    initApp({
       container: document.getElementById('root'), 
       options: {
         name: 'Vite + React + TS',
-        url: 'https://vitejs.dev/guide/features.html',
+        url: 'https://jsonplaceholder.typicode.com/users',
       }
     });
   </script>

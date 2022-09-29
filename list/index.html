@@ -5,15 +5,17 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite + React + TS</title>
+  <title>Vite + Svelte + TS</title>
 </head>
 
-<body> 
-  <div id="root"></div>
-  <script type="module" src="/src/main.tsx" async></script>
-  <script async>
+<body>
+  <div id="app"></div>
+  <script>
+    
+  </script>
+  <script type="module" src="/src/main.ts" async></script>
+  <script>
     function initApp(config) {
-     
       if (!window[config.createFunction]) {
         console.log(`Waiting for ${config.createFunction} to be defined`);
         setTimeout(function () {
@@ -23,14 +25,12 @@
       }
       window[config.createFunction](config.container, config.options);
     }
-
     initApp({
-      container: document.getElementById('root'), 
+      container: document.getElementById('app'),
       options: {
-        name: 'Vite + React + TS',
-        url: 'https://jsonplaceholder.typicode.com/users',
+        list: ["one","two","three"],
       },
-      createFunction: 'createGridApp'
+      createFunction: 'createListApp'
     });
   </script>
 </body>

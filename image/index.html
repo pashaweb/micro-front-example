@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <div id="app" class=" container "></div>
+    <script type="module" src="/src/main.ts"></script>
+    <script>
+      function initApp(config) {
+        if (!window[config.createFunction]) {
+          console.log(`Waiting for ${config.createFunction} to be defined`);
+          setTimeout(function () {
+            initApp(config);
+          }.bind(this), 1000);
+          return;
+        }
+        window[config.createFunction](config.container, config.options);
+      }
+      initApp({
+        container: document.getElementById('app'),
+        options: {
+          name: 'Madrid the best city in the world',
+          url: 'https://a.cdn-hotels.com/gdcs/production196/d170/348659c0-9beb-11e8-a1b5-0242ac110053.jpg?impolicy=fcrop&w=1600&h=1066&q=medium',
+        },
+        createFunction: 'createImageApp'
+      });
+    </script>
+  </body>
+</html>
