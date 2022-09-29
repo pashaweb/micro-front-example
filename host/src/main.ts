@@ -1,4 +1,4 @@
-
+import "./style.css";
 export interface App {
   appName: string
   appRootSelector: string
